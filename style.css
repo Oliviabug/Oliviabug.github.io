@@ -1,0 +1,711 @@
+body {
+  font-family: monospace, sans-serif; /* contain several fonts as a "fallback" system */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: AliceBlue;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: sticky; /* my header will always be visible on the top, even if I scroll down*/
+  top: 0;
+}
+
+.title-wrapper {
+  background-color: black;
+  width: 100%;
+}
+
+ .title {
+   color: white;
+   font-family: impact, charcoal, sans-serif;
+   font-size: 2rem;
+   text-align: center;
+ }
+
+
+/* '>' is a way to only target the list which is a direct child of 'nav' */
+nav > ul {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+/* This specific selector will insert some text or whitespace after each 'ul' elt */
+nav > ul::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* to create an horizontal navbar */
+nav > ul > li {
+  float: left;
+  position: relative;
+}
+
+nav > ul > li > a {
+  padding: 3vh 3.5vw;
+  color: white;
+  font-size: 1em;
+}
+
+/* to remove the bullet points */
+nav li {
+  list-style-type: none;
+}
+
+/* select and style a 'li' elt only when the mouse is on it */
+nav li:hover .submenu {
+  display: inline-block;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  padding: 0px;
+  z-index: 100000;
+}
+
+nav a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #F7C906;
+}
+
+/* in order to not display the subtab of our navbar */
+.submenu {
+  display: none;
+}
+
+.submenu li {
+  border-bottom: 1px solid orange;
+  background-color: black;
+}
+
+.submenu li a {
+  padding: 2vh 2vw;
+  font-size: 1em;
+  color: white;
+  width: 130px;
+}
+
+.submenu li a:hover {
+    color: #F7C906;
+}
+
+nav {
+  width: 100%;
+  background-color: #0000ff;
+  border-top: 1px solid white;
+  font-family: impact, charcoal, sans-serif;
+}
+
+/* End of my navbar styling - let's start with the main content of the index page*/
+p {
+  text-align: justify;
+} /* with p, i am targeting all the paragraphs of my website because I want them to be justified by default*/
+
+/* the main content section includes the big article on the left and my sidebar */
+.maincontent-wrapper {
+  margin: 10px 0 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+
+/* the title of my article will link to the full article - but for now, it's a non acitve link*/
+.maincontent a {
+  text-decoration: none; /* the link's underline disappear*/
+  color: black;
+}
+
+.maincontent a:hover {
+  color:#F7C906;
+}
+
+/*this section include my main article, it's the bigger section*/
+.maincontent {
+  margin-left: 1.5vw;
+  flex: 1 1 66%;
+}
+
+.maincontent img {
+  width: 100%; /* it has to fit the entire size of the box*/
+  max-height: 70vh;
+  border-radius: 10px;
+}
+
+.maincontent h2 a {
+  font-size: 2rem;
+}
+
+/* my aside bar is in the same div than my main content because they are next to in each other so I can use flex on both of them*/
+aside {
+  flex: 1 1 27%;
+  background-color: #F7C906;
+  border-radius: 10px;
+  margin: 0 1.5vw 0 2.5vw;
+  text-align: center;
+}
+
+aside p {
+  margin: 10px;
+  font-size: 1rem;
+}
+
+aside h3 {
+  text-align: center;
+}
+
+/* type selector of my video*/
+iframe {
+  width: 80%;
+  height: auto;
+  margin-bottom: 4vh;
+}
+
+.columns {
+  display: flex; /* we use flex so we avoid a lot of float downsides*/
+  flex-wrap: wrap;
+  margin: 0 1.5vw 20px 1.5vw;
+}
+
+/* this div includes my two left 'boxes' that have to fit the size of the mainnews content above, that's why the flex property is 66% too*/
+.wrapper {
+  display: flex;
+  flex: 2 1 66%;
+}
+
+/* all my columns have the same classes and another uniaue class*/
+.col {
+  text-align: center;
+  flex: 1; /* the three columns will automatically adjust to the size of the page. Each will measure one third of the webpage*/
+  background-color: black;
+  color: white;
+}
+
+.col h3 {
+  font-family: impact, charcoal, sans-serif;
+}
+
+.col1 {
+  flex: 1 1 45%;
+  border: 2px solid black;
+  margin-right: 0.75vw;
+  margin-bottom: 2vh;
+  border-radius: 10px;
+  overflow:hidden;
+}
+
+.col1 img {
+  width: 100%;
+}
+
+.col2 {
+  flex: 1 1 45%;
+  border: 2px solid black;
+  margin: 0 0 2vh 0.75vw;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.col2 img {
+  width: 100%;
+}
+
+.col3 {
+  flex: 1 1 27%;
+  margin-left: 2.5vw;
+  margin-bottom: 2vh;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+
+#bref {
+  background-color: white;
+}
+
+#bref h3 {
+  color: black;
+}
+
+#bref-content {
+  background-color: white;
+  color: black;
+}
+
+#bref-content p {
+  margin: 2vh 2vw 1vh 2vw;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.col3 {
+  background-color: white;
+}
+
+/* my footer basically only includes a backrgound image and some media icons image with links on the top*/
+footer {
+  background-image: url('footer.png');
+  background-size: cover;
+  height: 280px;
+  Background-color: AliceBlue;
+}
+
+.social-media {
+  display: flex;
+}
+
+.social-media a {
+  flex-shrink: 1;
+  flex-basis: 15%;
+}
+
+.social-media a img {
+  max-width: 100%;
+}
+
+.social-media .facebook {
+  /*display:inline-flex;*/
+  margin: 0 2vw 0 1vw; /* Use of vh instead of pixels, I try to avoid pixels as much as possible */
+}
+
+.social-media .instagram {
+  /*display:inline-flex;*/
+  margin-right: 2vw; /* vh is a relative length relative to 1% of the height of the viewport */
+
+}
+
+.social-media .twitter {
+  margin-right: 2vw;
+  /*display: inline-flex;*/
+}
+
+/* end of the index webpage CSS and beginning of the debate webpage CSS */
+
+/* all-debate wraps all the content of the webpage */
+#all-debate{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.debate {
+  font-family: monospace, sans-serif;
+  flex-basis: 100%;
+}
+
+.debate p {
+  font-size: 1rem;
+}
+
+.debate h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* one unique ID class for my three debates display on the webpage */
+#debate1 {
+  background-color: Lightblue;
+  display: flex; /* flex box inside flex box */
+}
+
+.debate1-img {
+  flex: 0 1 35%;
+}
+
+.debate1-para {
+  flex: 0 0 60%;
+}
+
+#debate1 img {
+  margin-top: 5vh;
+  width: 85%;
+}
+
+
+#debate1 p {
+  margin: 10vh 10vh 10vh 10vh;
+}
+
+#debate1 h2 {
+  margin-top: 10vh;
+}
+
+#debate2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-image: url('brexit.jpg');
+  background-repeat: repeat;
+  min-height: 90vh;
+}
+
+.debate2-col2 h2 {
+  color: white;
+  font-size: 3rem;
+  text-shadow: 2px 2px black;
+}
+
+#debate2 p {
+  color: white;
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 4.5vh;
+  text-shadow: 1px 1px black;
+
+}
+
+.debate2-col1 {
+  flex : 0 0 25%; /*the two zeros are flex-grow and flex-shrink, we don't need them here because we indicated the exact size, in percentage, of each of our flexbox */
+  align-self: center;
+  margin-right: 4vw;
+}
+
+.debate2-col2 {
+  flex: 0 0 33%;
+  align-self: center;
+
+}
+
+.debate2-col3 {
+  flex: 0 0 25%;
+  align-self: center;
+  margin-left: 4vw;
+}
+
+#debate3 {
+  background-image: url('italy.png');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  text-align:center;
+}
+
+
+#debate3 p {
+  margin: 5% 20% 10% 20%;
+}
+
+#debate3 h2 {
+  font-size: 2.5rem;
+  margin-top: 10vh;
+}
+
+
+/* let's attack the news page */
+
+/* the global section includes my six articles*/
+#articles-wrapper {
+display: flex;
+margin: 0 10vw 5vh 10vw;
+background-color: AliceBlue;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+text-align: center;
+
+}
+
+#articles-wrapper a {
+  text-decoration: none;
+  color: black;
+}
+
+#articles-wrapper a:hover {
+  color: #F7C906;
+}
+
+/* they all share the same properties and valueS at the exception of the flex size */
+.first-article {
+flex: 0 0 60%;
+background-color: white;
+margin-bottom: 2vh;
+}
+
+
+.second-article {
+flex: 0 0 30%;
+background-color: white;
+margin-bottom: 2vh;
+}
+
+
+.third-article {
+flex: 0 0 45%;
+background-color: white;
+margin-bottom: 2vh;
+}
+
+
+.fourth-article {
+flex: 0 0 45%;
+background-color: white;
+margin-bottom: 2vh;
+}
+
+
+.fifth-article {
+flex: 0 0 30%;
+background-color: white;
+margin-bottom: 2vh;
+}
+
+
+.sixth-article {
+flex: 0 0 60%;
+background-color: white;
+margin-bottom: 2vh;
+}
+
+
+/* new webpage : "hongkong webpage" - possibility to find this page via the news page by clicking on the first article's title  */
+
+#hk-wrapper {
+  display: flex;
+  background-image: url('hongkong.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* the bakground image will always stay at the same place even if the page is scrolled */
+  height: 100%;
+}
+
+#hk-article {
+  margin: 0 25vw 0 25vw;
+  background-color: rgba(0, 0, 0, 0.8) ; /* the last figure - 0.8 - is for the opacity */
+  color: white;
+}
+
+#hk-article p {
+  margin: 0 5vw 0 5vw;
+  line-height: 4vh;
+}
+
+#hk-article h2 {
+  text-align: center;
+  margin: 1vh 1vw 3vh 1vw;
+  font-size: 1.8rem;
+}
+
+/*let's adjust our content to the size of the screen */
+@media(max-width: 1260px) {
+  .wrapper {
+    align-items: flex-start;
+  }
+
+  aside p {
+    font-size: 0.8em;
+  }
+
+}
+
+@media(max-width: 1000px) {
+
+  aside p {
+    font-size: 0.6em;
+  }
+
+  .debate p {
+    font-size: 0.8rem;
+  }
+
+  #debate3 {
+    background-repeat: repeat;
+  }
+
+  .debate2-col2 h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media(max-width: 900px) {
+
+  .columns {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .col3 {
+    flex: 0 0 60%;
+    max-width: 85%;
+    align-self: center;
+  }
+
+  .debate2-col2 h2 {
+    font-size: 2rem;
+  }
+
+
+  #debate2 p {
+    line-height: normal;
+    font-size: 1.1rem;
+  }
+
+  #debate3 h2 {
+    font-size: 2rem;
+  }
+
+  #hk-article {
+    margin: 0 15vw 0 15vw; /* reduce the margin */
+  }
+}
+
+
+@media(max-width:700px) {
+  .maincontent-wrapper {
+    flex-direction: column;
+  }
+
+  .maincontent {
+    margin-right: 1.5vw;
+  }
+
+  .maincontent h2 a {
+    font-size: 1.7rem;
+  }
+
+  aside {
+    margin: 0 1.5vw 0 1.5vw;
+  }
+
+  aside p {
+    font-size: 0.8em;
+  }
+
+  .wrapper {
+    flex-direction: column; /* change the direction when the screen gets smaller */
+    justify-content: center;
+    align-self: center;
+  }
+
+  .col {
+    max-width: 85%; /* esthetically, I don't want my columns to be too big */
+    align-self: center;
+  }
+
+  .col3 {
+    border: 2px solid black;
+    margin: 0 0 0 0;  /* important so my last column will have the same width than the two others when it goes down thanks to flex-direction: column */
+  }
+
+  .col1 {
+    margin: 0 0 1.5vh 0;
+  }
+
+  .col2 {
+    margin: 0 0 1.5vh 0;
+  }
+
+  .debate h2 {
+    font-size: 1.5rem;
+
+  }
+
+/* The image on the left of debate1 will disappear to let more place to the text */
+  .debate1-img {
+    display: none;
+  }
+
+  .debate1-para {
+    flex: 0 0 100%;
+  }
+
+  .debate1-para p {
+    font-size: 0.7rem;
+  }
+
+  #debate3 p {
+    font-size: 0.7rem;
+    margin: 0 10vh 10vh 10vh;
+  }
+
+  #debate3 {
+    background-repeat: repeat;
+    background-size: 100%;
+  }
+
+  #debate3 h2 {
+    font-size: 1.5rem;
+  }
+
+  #debate2 {
+    flex-direction: column;
+    min-height: 70vh;
+  }
+
+  #debate2 p {
+    font-size: 1rem;
+    text-align: justify;
+    margin: 0 10vh 10vh 10vh;
+  }
+
+  .debate2-col2 {
+    order: 1;
+    flex: 0 0 15%;
+  }
+
+  .debate2-col1 {
+    order: 2;
+    margin: 0 2vw 0 2vw;
+    flex: 0 0 10%;
+  }
+
+  .debate2-col3 {
+    order: 3;
+    margin: 0 2vw 0 2vw;
+    flex: 0 0 10%;
+  }
+
+  #articles-wrapper img {
+    max-width: 100%;
+  }
+
+  #articles-wrapper {
+    flex-direction: column;
+  }
+
+  #articles-wrapper h3 {
+    font-size: 1em;
+}
+
+  #hk-article {
+    margin: 0 5vw 0 5vw;
+  }
+
+
+  #hk-article p {
+    font-size: 0.9em;
+  }
+
+  #hk-article h2 {
+    font-size: 1.5rem;
+  }
+
+}
+
+@media (max-width:360px) {
+  .submenu-what {
+    display: none;
+  }
+
+  .what-button {
+    display: none;
+  }
+  /* For the navigation bar to not take too much place but still be perfectly visible, we remove the 'what' tab */
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  #debate2 p {
+    margin-left: 0.7vw;
+    margin-right: 0.7vw;
+  }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My first website</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header>
+   <div class="title-wrapper">
+		<h1 class="title">A BUSINESS WORD</h1>
+	 </div>
+	 <nav> <!-- My nav is a HTML list with two subsets lists. It make the navigation easier and faster -->
+    <ul>
+      <li><a href="index.html">Home</a></li>
+        <li><a href="news.html">News</a>
+          <ul class="submenu">
+            <li><a href="#">Europe</a></li> <!-- # after href means that it's a nonactive link -->
+            <li><a href="#">France</a></li>
+            <li><a href="#">World</a></li>
+          </ul>
+        </li>
+      <li><a href="debate.html">Debate</a></li>
+      <li><a class="what-button" href="what.html">What?</a>
+        <ul class="submenu submenu-what">
+          <li><a href="#">Fundamentals</a></li>
+          <li><a href="#">Books</a></li>
+        </ul>
+      </li>
+      <li class="contact"><a href="contact.html">Contact</a></li>
+    </ul>
+
+   </nav>
+ </header>
+
+ <section id="articles-wrapper">
+	 <!-- I display six articles that's why I have six div inside my section -->
+    <div class="first-article">
+      <img src="catalogne.jpg" alt="catalogne independence">
+      <div class="article-text">
+       <a href="hongkong.html"><h3>Un referendum pour l'independance mais le gouvernement ne veut pas la lacher</h3></a>
+      </div> <!-- You can click on the HongKong link on the webpage, this is the only one truly working -->
+    </div>
+
+    <div class="second-article">
+      <img src="macron.jpg" alt="macron president">
+      <div class="article-text">
+        <a href="#"><h3>Macron est-il le president des ri ?</h3></a>
+      </div>
+    </div>
+
+    <div class="third-article">
+     <img src="bitcoin.jpg" alt="bitcoin">
+     <div class="article-text">
+       <a href="#"><h3>Le bitcoin:la fin de la monnaie fiduciaire?</h3></a>
+     </div>
+    </div>
+
+    <div class="fourth-article">
+     <img src="chine.png" alt="china flag">
+     <div class="article-text">
+       <a href="#"><h3>La Chine future reine de l'innovation</h3></a>
+     </div>
+    </div>
+
+    <div class="fifth-article">
+      <img src="industry-germany.jpg" alt="industry germany">
+      <div class="article-text">
+        <a href="#"><h3>German industry could decline soon</h3></a>
+      </div>
+    </div>
+
+    <div class="sixth-article">
+     <img src="nudge.jpg" alt="rhinoceros nudge economy">
+     <div class="article-text">
+       <a href="#"><h3>Better understand the economy thanks to animals' behavior, the nudge economy</h3></a>
+     </div>
+    </div>
+
+ </section>
+
+
+
+ <br>
+ <br>
+ <footer>
+ <div class="social-media">
+	 <!-- these icons will be a direct access to my website social media accounts. For now, only the FB link is working, opening a new webpage to access my account thanks to the target property -->
+	 <a class="facebook" href="https://www.facebook.com/olivia.bugault" target="_blank"><img src="facebook.png" alt="facebook"></a>
+	 <a class="instagram" href="#"><img src="instagram.png" alt="instagram"></a>
+	 <a class="twitter" href="#"><img src="twitter.png" alt="twitter"></a>
+	</div>
+ </footer>
+
+ </body>
